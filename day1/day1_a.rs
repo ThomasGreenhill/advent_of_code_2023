@@ -3,7 +3,7 @@ use std::env;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-fn read_calibration_data_from_file(file_path: String) -> Vec<String> {
+pub fn read_calibration_data_from_file(file_path: String) -> Vec<String> {
     let file = File::open(file_path).expect("File not found");
     let reader = BufReader::new(file);
     let mut data = Vec::new();
@@ -35,7 +35,7 @@ fn get_first_and_last_int_from_string(s: String) -> (i32, i32) {
     (first, last)
 }
 
-fn combine_ints(i1: i32, i2: i32) -> i32 {
+pub fn combine_ints(i1: i32, i2: i32) -> i32 {
     i1 * 10 + i2
 }
 
